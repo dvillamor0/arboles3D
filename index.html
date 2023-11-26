@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 15px;
+        margin: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+      input[type="range"],
+      input[type="text"] {
+        width: 90%;
+        margin: 5px auto; /* Centrar los inputs */
+        display: block;
+      }
+
+      .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:active {
+      background-color: #2980b9; /* Color más oscuro cuando se hace clic */
+    }
+    </style>
+  </head>
+
+  <body>
+    <div id="canvas"></div>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Arbol 1</th>
+          <th colspan="2">Arbol 2</th>
+          <th colspan="2">Arbol 3</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>Escala:</label>
+            <input type="range" id="escala1" name="escala" min="0" max="30" value="15">
+            <br>
+            <label>Ángulo:</label>
+            <input type="range" id="angulo1" name="angulo" min="0" max="360" value="180">
+          </td>
+          <td>
+            <label>Axioma:</label>
+            <input type="text" id="axioma1" name="axioma" maxlength="1" value="C">
+            <label >Reglas:</label>
+            <input type="text" id="reglas1" name="reglas" value='"A":"ACB","B":"CB","C":"A"'>
+          </td>
+
+          <td>
+            <label>Escala:</label>
+            <input type="range" id="escala2" name="escala" min="0" max="30" value="15">
+            <br>
+            <label>Ángulo:</label>
+            <input type="range" id="angulo2" name="angulo" min="0" max="360" value="180">
+          </td>
+          <td>
+            <label>Axioma:</label>
+            <input type="text" id="axioma2" name="axioma" maxlength="1" value="A">
+            <label >Reglas:</label>
+            <input type="text" id="reglas2" name="reglas" value='"A":"CB","B":"CA","C":"BA"'>
+          </td>
+
+          <td>
+            <label>Escala:</label>
+            <input type="range" id="escala3" name="escala" min="0" max="30" value="15">
+            <br>
+            <label>Ángulo:</label>
+            <input type="range" id="angulo3" name="angulo" min="0" max="360" value="180">
+          </td>
+          <td>
+            <label>Axioma:</label>
+            <input type="text" id="axioma3" name="axioma" maxlength="1" value="B">
+            <label >Reglas:</label>
+            <input type="text" id="reglas3" name="reglas" value='"A":"CB","B":"AC","C":"B"'>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="src/LSystem.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
